@@ -10,7 +10,7 @@ const ScreenSchema = new c.Schema({
     required:true,
   },
   types_of_seat:{
-    type:String,
+    type:Array,
     required:true,
   }
 });
