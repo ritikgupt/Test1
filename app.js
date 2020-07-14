@@ -1,13 +1,15 @@
 const express = require('express')
 const compression = require('compression')
 const mongoose = require('mongoose')
-const sampleRoutes = require('./routes/screen')
+const screenRoutes = require('./routes/screen')
+const ticketRoutes = require("./routes/ticket");
 const port = process.env.PORT||5000
 const app = express()
 app.use(express.urlencoded({extended: true}));
 app.use(express.json())
 app.use(compression())
-app.use(sampleRoutes);
+app.use(screenRoutes);
+app.use(ticketRoutes)
 require("dotenv").config();
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, {
